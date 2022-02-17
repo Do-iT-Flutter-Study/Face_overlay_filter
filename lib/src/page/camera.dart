@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'package:camera/camera.dart';
 import 'package:tflite_flutter/tflite_flutter.dart' as tfl;
-import 'package:tflite_flutter/tflite_flutter.dart';
 
 import '../../main.dart';
 
@@ -39,8 +38,11 @@ class _CameraExampleState extends State<CameraExample> {
             interpreter.allocateTensors();
             print(interpreter.getInputTensors());
             print(interpreter.getOutputTensors());
+
+            // image => tensorflow 모델의 input type으로 변환하는 코드 필요
             runModel();
-            // interpreter.detectObjectOnFrame;
+
+
           }
         });
         setState(() {});
@@ -63,8 +65,13 @@ class _CameraExampleState extends State<CameraExample> {
     Map<String, Object> inputs = HashMap();
     Map<String, Object> outputs = HashMap();
     interpreter.run(inputs, outputs);
+    // 192x192
+
     print("input: "+inputs.toString());
     print("output: "+outputs.toString());
+
+    // 가져온 output을 바탕으로 해당 위치에 원하는 프레임에 사진? 필터? 씌우는 코드
+
   }
 
   @override
