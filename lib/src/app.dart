@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:practice1/src/page/camera.dart';
 
 import 'package:practice1/src/page/getting_started.dart';
+import 'package:practice1/src/page/image_classifier.dart';
 import 'package:practice1/src/page/result.dart';
 import 'package:practice1/src/provider/firebase_auth.dart';
 import 'package:practice1/src/provider/firebase_firestore.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
                 ),
-                home: ResultPage(),
+                home:  ImageClassifierExample(),
               ));
         }
         return CircularProgressIndicator();
