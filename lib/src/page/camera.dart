@@ -36,6 +36,7 @@ class _CameraExampleState extends State<CameraExample> {
         return;
       }
       controller.startImageStream((image) {
+        // image 값이 계속 변화하면서 UI를 변경
         if (!isDetecting) {
           isDetecting = true;
           cameraImage = image;

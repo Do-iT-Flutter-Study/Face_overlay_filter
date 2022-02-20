@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:typed_data';
 
 import 'package:image/image.dart';
 import 'package:collection/collection.dart';
@@ -44,13 +45,14 @@ abstract class Classifier {
     }
 
     loadModel();
-    // loadLabels();
+    loadLabels();
   }
 
   Future<void> loadModel() async {
     try {
       interpreter =
           await Interpreter.fromAsset(modelName, options: _interpreterOptions);
+
       print('Interpreter Created Successfully');
 
       _inputShape = interpreter.getInputTensor(0).shape;
@@ -105,13 +107,17 @@ abstract class Classifier {
     print('Time to load image: $pre ms');
 
     final runs = DateTime.now().millisecondsSinceEpoch;
-    interpreter
-        .runForMultipleInputs([_inputImage.buffer], _outputBuffers);
+    interpreter.runForMultipleInputs([_inputImage.buffer], _outputBuffers);
     final run = DateTime.now().millisecondsSinceEpoch - runs;
 
     print('Time to run inference: $run ms');
 
     // 이 밑 부분에 detectObjectOnFrame
+
+    _outputBuffers.forEach((key, value) {
+      ByteBuffer output = value as ByteBuffer;
+      print(output.asFloat32List());
+    });
 
     // 이거는 예제를 위한 함수여서 필요 X
     Map<String, double> labeledProb = TensorLabel.fromList(
