@@ -17,6 +17,7 @@ abstract class Classifier {
 
   late TensorImage _inputImage;
   late TensorBuffer _outputBuffer;
+  final Map<int, Object> _outputBuffers = <int, Object>{};
 
   late TfLiteType _inputType;
   late TfLiteType _outputType;
@@ -53,19 +54,26 @@ abstract class Classifier {
       print('Interpreter Created Successfully');
 
       _inputShape = interpreter.getInputTensor(0).shape;
-      _outputShape = interpreter.getOutputTensor(0).shape;
       _inputType = interpreter.getInputTensor(0).type;
-      _outputType = interpreter.getOutputTensor(0).type;
 
-      _outputBuffer = TensorBuffer.createFixedSize(_outputShape, _outputType);
+      for (int i = 0; i < interpreter.getOutputTensors().length; i++) {
+        _outputShape = interpreter.getOutputTensor(i).shape;
+        _outputType = interpreter.getOutputTensor(i).type;
+        _outputBuffer = TensorBuffer.createFixedSize(_outputShape, _outputType);
+        _outputBuffers[i] = _outputBuffer.getBuffer();
+      }
+
+      print(interpreter.getInputTensors());
+      print(interpreter.getOutputTensors());
+
       _probabilityProcessor =
           TensorProcessorBuilder().add(postProcessNormalizeOp).build();
-
     } catch (e) {
       print('Unable to create interpreter, Caught Exception: ${e.toString()}');
     }
   }
 
+  // 이거는 예제를 위한 함수여서 필요 X
   Future<void> loadLabels() async {
     labels = await FileUtil.loadLabels(_labelsFileName);
     if (labels.length == _labelsLength) {
@@ -86,6 +94,7 @@ abstract class Classifier {
         .process(_inputImage);
   }
 
+  // 이 함수는 텐서플로우 모델의 분석이 진행되는 함수입니다. 여기서 Frame에 씌우는 코드를 짜면 됩니다.
   Category predict(Image image) {
     final pres = DateTime.now().millisecondsSinceEpoch;
     _inputImage = TensorImage(_inputType);
@@ -96,11 +105,15 @@ abstract class Classifier {
     print('Time to load image: $pre ms');
 
     final runs = DateTime.now().millisecondsSinceEpoch;
-    interpreter.run(_inputImage.buffer, _outputBuffer.getBuffer());
+    interpreter
+        .runForMultipleInputs([_inputImage.buffer], _outputBuffers);
     final run = DateTime.now().millisecondsSinceEpoch - runs;
 
     print('Time to run inference: $run ms');
 
+    // 이 밑 부분에 detectObjectOnFrame
+
+    // 이거는 예제를 위한 함수여서 필요 X
     Map<String, double> labeledProb = TensorLabel.fromList(
             labels, _probabilityProcessor.process(_outputBuffer))
         .getMapWithFloatValue();

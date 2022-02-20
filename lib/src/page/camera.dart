@@ -40,6 +40,7 @@ class _CameraExampleState extends State<CameraExample> {
           isDetecting = true;
           cameraImage = image;
 
+          // CameraImage => Image
           // image => tensorflow 모델의 input type으로 변환하는 코드 필요
           _predict(imglib.grayscale(convertYUV420(image)));
         }
