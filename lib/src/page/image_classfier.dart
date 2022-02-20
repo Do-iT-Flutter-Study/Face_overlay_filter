@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import 'package:logger/logger.dart';
-import 'package:practice1/src/model/classifier_face_mesh.dart';
+
 import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 
-import 'package:practice1/src/model/classifier.dart';
-import 'package:practice1/src/model/classifier_face_mesh.dart';
+import '../model/face_mesh.dart';
+import '../model/face_mesh_painter.dart';
 
 class ImageClassifierExample extends StatefulWidget {
   const ImageClassifierExample({Key? key}) : super(key: key);
@@ -18,8 +18,9 @@ class ImageClassifierExample extends StatefulWidget {
 }
 
 class _ImageClassifierExampleState extends State<ImageClassifierExample> {
-  late Classifier _classifier;
+  final FaceMesh _faceMesh = FaceMesh(numThreads: 1);
 
+  Map<String, dynamic>? results = <String, dynamic>{};
   var logger = Logger();
 
   File? _image;
@@ -27,22 +28,14 @@ class _ImageClassifierExampleState extends State<ImageClassifierExample> {
 
   Image? _imageWidget;
 
-  img.Image? fox;
-
   Category? category;
 
-  @override
-  void initState() {
-    super.initState();
-    _classifier = ClassifierFaceMesh();
-  }
-
   Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
 
     setState(() {
       _image = File(pickedFile!.path);
-      _imageWidget = Image.file(_image!);
+      _imageWidget = Image.file(_image!, width: 192, height: 192,);
 
       _predict();
     });
@@ -50,15 +43,15 @@ class _ImageClassifierExampleState extends State<ImageClassifierExample> {
 
   void _predict() async {
     img.Image imageInput = img.decodeImage(_image!.readAsBytesSync())!;
-    var pred = _classifier.predict(imageInput);
-
-    setState(() {
-      this.category = pred;
-    });
+    results = _faceMesh.predict(imageInput);
+    print(results);
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
+    final double _ratio = screenSize.width / screenSize.height;
     return Scaffold(
       appBar: AppBar(
         title: Text('TfLite Flutter Helper',
@@ -66,17 +59,27 @@ class _ImageClassifierExampleState extends State<ImageClassifierExample> {
       ),
       body: Column(
         children: <Widget>[
-          Center(
-            child: _image == null
-                ? Text('No image selected.')
-                : Container(
-                    constraints: BoxConstraints(
-                        maxHeight: MediaQuery.of(context).size.height / 2),
-                    decoration: BoxDecoration(
-                      border: Border.all(),
-                    ),
-                    child: _imageWidget,
-                  ),
+          Stack(
+            children: [
+              Center(
+                child: _image == null
+                    ? Text('No image selected.')
+                    : Container(
+                        constraints: BoxConstraints(maxHeight: 192),
+                        decoration: BoxDecoration(
+                          border: Border.all(),
+                        ),
+                        child: _imageWidget,
+                      ),
+              ),
+              Center(
+                  child: CustomPaint(
+                painter: FaceMeshPainter(
+                  points: results?['point'] ?? [],
+                  ratio: _ratio,
+                ),
+              ))
+            ],
           ),
           SizedBox(
             height: 36,
