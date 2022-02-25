@@ -36,7 +36,8 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
                 ),
-                home: ImageClassifierExample(),
+                // home: CameraExample(),
+                home: CameraExample(),
               ));
         }
         return CircularProgressIndicator();

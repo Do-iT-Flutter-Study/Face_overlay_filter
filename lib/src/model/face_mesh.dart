@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -8,17 +9,15 @@ import 'package:tflite_flutter_helper/tflite_flutter_helper.dart';
 import '../utils/image_utils.dart';
 import 'ai_model.dart';
 
+
 // ignore: must_be_immutable
+// faceMesh model에 관한 코드입니다.
+// 출처 : https://github.com/JaeHeee/FlutterWithMediaPipe/
+// predict 함수를 관심있게 보시면 됩니다.
 class FaceMesh extends AiModel {
   late InterpreterOptions _interpreterOptions;
 
-  FaceMesh({int? numThreads}) {
-    _interpreterOptions = InterpreterOptions();
-
-    if (numThreads != null) {
-      _interpreterOptions.threads = numThreads;
-    }
-
+  FaceMesh({this.interpreter}) {
     loadModel();
   }
 
@@ -36,6 +35,8 @@ class FaceMesh extends AiModel {
   @override
   Future<void> loadModel() async {
     try {
+      final _interpreterOptions = InterpreterOptions();
+
       interpreter ??= await Interpreter.fromAsset('models/face_landmark.tflite',
           options: _interpreterOptions);
       print('interpreter initialized');
@@ -50,6 +51,7 @@ class FaceMesh extends AiModel {
     }
   }
 
+  // input image에 대해서 192*192 tensorImage로 reformat합니다.
   @override
   TensorImage getProcessedImage(TensorImage inputImage) {
     final imageProcessor = ImageProcessorBuilder()
@@ -61,7 +63,12 @@ class FaceMesh extends AiModel {
     return inputImage;
   }
 
-  @override
+  // image library의 Image class를 input으로 받습니다.
+  // outputBuffer 초기화는 loadModel() 메소드에 있습니다.
+  // outputLandmarks에는 x, y, z 축에 대해서 각각 468개의 점이 담깁니다. 총 1414개
+  // outputScores에는 분석값에 대한 벤치마크 점수가 담깁니다. 음수이면 landmark를 사용할 수 없습니다.
+  // 따라서 outputScores가 음수면 null을 리턴합니다.
+
   Map<String, dynamic>? predict(image_lib.Image image) {
     if (interpreter == null) {
       print('Interpreter not initialized');
@@ -94,6 +101,8 @@ class FaceMesh extends AiModel {
 
     final landmarkPoints = outputLandmarks.getDoubleList().reshape([468, 3]);
 
+    // [1,1,1,1414]
+
     final landmarkResults = <Offset>[];
     for (var point in landmarkPoints) {
       landmarkResults.add(Offset(
@@ -105,3 +114,12 @@ class FaceMesh extends AiModel {
     return {'point': landmarkResults};
   }
 }
+
+// compute, isolate와 같은 백그라운드 실행을 위해서 전역 메소드로 선언합니다.
+// 아직 공부 중이기에 추후 수정될 수 있습니다.
+FutureOr<Map<String, dynamic>?> runFaceMesh(Map<String, dynamic> params) {
+  final result = params['model'].predict(params['image']!);
+
+  return result;
+}
+
