@@ -1,21 +1,21 @@
 {
   "buildFiles": [
-    "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\CMakeLists.txt",
+    "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\CMakeLists.txt",
     "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
     "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\platforms.cmake"
   ],
   "cleanCommands": [
-    "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a\" clean"
+    "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a\" clean"
   ],
-  "buildTargetsCommand": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "native_opencv-Debug-arm64-v8a": {
       "artifactName": "native_opencv",
-      "buildCommand": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a\" native_opencv",
+      "buildCommand": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\arm64-v8a\" native_opencv",
       "abi": "arm64-v8a",
-      "output": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\build\\app\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libnative_opencv.so",
+      "output": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\build\\app\\intermediates\\cmake\\debug\\obj\\arm64-v8a\\libnative_opencv.so",
       "runtimeFiles": [
-        "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\src\\main\\jniLibs\\libs\\arm64-v8a\\libopencv_java4.so"
+        "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\src\\main\\jniLibs\\libs\\arm64-v8a\\libopencv_java4.so"
       ]
     }
   }

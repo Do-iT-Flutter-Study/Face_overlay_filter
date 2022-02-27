@@ -1,7 +1,7 @@
 Executable : C:\Users\JangSeongHo\AppData\Local\Android\sdk\cmake\3.10.2.4988404\bin\ninja.exe
 arguments : 
 -C
-C:\Users\JangSeongHo\StudioProjects\practice1\android\app\.cxx\cmake\debug\x86
+C:\Users\JangSeongHo\StudioProjects\Face_overlay_filter\android\app\.cxx\cmake\debug\x86
 native_opencv
 jvmArgs : 
 

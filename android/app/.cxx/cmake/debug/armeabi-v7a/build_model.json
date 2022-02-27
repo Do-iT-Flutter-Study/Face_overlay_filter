@@ -1,13 +1,13 @@
 {
   "abi": "ARMEABI_V7A",
-  "abiPlatformVersion": 19,
+  "abiPlatformVersion": 21,
   "buildSettings": {
     "environmentVariables": []
   },
   "cmake": {
-    "cmakeArtifactsBaseFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a",
-    "cmakeServerLogFile": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\\cmake_server_log.txt",
-    "cmakeWrappingBaseFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cxx\\debug\\armeabi-v7a",
+    "cmakeArtifactsBaseFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a",
+    "cmakeServerLogFile": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\\cmake_server_log.txt",
+    "cmakeWrappingBaseFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cxx\\debug\\armeabi-v7a",
     "effectiveConfiguration": {
       "name": "traditional-android-studio-cmake-environment",
       "description": "Composite reified CMakeSettings configuration",
@@ -15,7 +15,7 @@
       "inheritEnvironments": [
         "ndk"
       ],
-      "buildRoot": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a",
+      "buildRoot": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a",
       "cmakeToolchain": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
       "cmakeExecutable": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\cmake.exe",
       "variables": [
@@ -25,7 +25,7 @@
         },
         {
           "name": "CMAKE_FIND_ROOT_PATH",
-          "value": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\prefab\\armeabi-v7a\\prefab"
+          "value": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\prefab\\armeabi-v7a\\prefab"
         },
         {
           "name": "CMAKE_BUILD_TYPE",
@@ -45,7 +45,7 @@
         },
         {
           "name": "ANDROID_PLATFORM",
-          "value": "android-19"
+          "value": "android-21"
         },
         {
           "name": "CMAKE_ANDROID_ARCH_ABI",
@@ -61,7 +61,7 @@
         },
         {
           "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
-          "value": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\build\\app\\intermediates\\cmake\\debug\\obj\\armeabi-v7a"
+          "value": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\build\\app\\intermediates\\cmake\\debug\\obj\\armeabi-v7a"
         },
         {
           "name": "CMAKE_MAKE_PROGRAM",
@@ -73,7 +73,7 @@
         },
         {
           "name": "CMAKE_SYSTEM_VERSION",
-          "value": "19"
+          "value": "21"
         },
         {
           "name": "ANDROID_STL",
@@ -82,14 +82,14 @@
       ]
     }
   },
-  "cxxBuildFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a",
+  "cxxBuildFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a",
   "info": {
     "abi": "ARMEABI_V7A",
     "bitness": 32,
     "deprecated": false,
     "default": true
   },
-  "originalCxxBuildFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a",
+  "originalCxxBuildFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a",
   "variant": {
     "buildSystemArgumentList": [
       "-DANDROID_STL\u003dc++_shared"
@@ -110,12 +110,12 @@
         "ninjaExe": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe"
       },
       "cmakeToolchainFile": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
-      "cxxFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx",
+      "cxxFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx",
       "gradleModulePathName": ":app",
-      "intermediatesFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\build\\app\\intermediates",
-      "makeFile": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\CMakeLists.txt",
-      "moduleBuildFile": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\build.gradle",
-      "moduleRootFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app",
+      "intermediatesFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\build\\app\\intermediates",
+      "makeFile": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\CMakeLists.txt",
+      "moduleBuildFile": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\build.gradle",
+      "moduleRootFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app",
       "ndkDefaultAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
@@ -179,12 +179,12 @@
       "ndkDefaultStl": "LIBCXX_STATIC",
       "ndkVersion": "21.1.6352462",
       "project": {
-        "compilerSettingsCacheFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\.cxx",
-        "cxxFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\.cxx",
+        "compilerSettingsCacheFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\.cxx",
+        "cxxFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\.cxx",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
         "isNativeCompilerSettingsCacheEnabled": false,
-        "rootBuildGradleFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android",
+        "rootBuildGradleFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android",
         "sdkFolder": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk",
         "isPrefabEnabled": false
       },
@@ -201,7 +201,7 @@
         "SYSTEM": {}
       }
     },
-    "objFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\build\\app\\intermediates\\cmake\\debug\\obj",
+    "objFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\build\\app\\intermediates\\cmake\\debug\\obj",
     "variantName": "debug",
     "validAbiList": [
       "ARMEABI_V7A",
@@ -209,8 +209,8 @@
       "X86",
       "X86_64"
     ],
-    "prefabDirectory": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\prefab",
+    "prefabDirectory": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\prefab",
     "prefabPackageDirectoryList": []
   },
-  "prefabFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\prefab\\armeabi-v7a"
+  "prefabFolder": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\prefab\\armeabi-v7a"
 }

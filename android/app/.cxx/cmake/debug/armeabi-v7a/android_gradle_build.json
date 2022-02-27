@@ -1,35 +1,35 @@
 {
   "stringTable": {
-    "0": "C:/Users/JangSeongHo/StudioProjects/practice1/android/app/.cxx/cmake/debug/armeabi-v7a",
-    "1": "--target=armv7-none-linux-androideabi19 --gcc-toolchain=C:/Users/JangSeongHo/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/JangSeongHo/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_opencv_EXPORTS -I../../../../../../include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -frtti -fexceptions -std=c++11 -O0 -fno-limit-debug-info -fPIC"
+    "0": "C:/Users/JangSeongHo/StudioProjects/Face_overlay_filter/android/app/.cxx/cmake/debug/armeabi-v7a",
+    "1": "--target=armv7-none-linux-androideabi21 --gcc-toolchain=C:/Users/JangSeongHo/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=C:/Users/JangSeongHo/AppData/Local/Android/Sdk/ndk/21.1.6352462/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dnative_opencv_EXPORTS -I../../../../../../include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security -frtti -fexceptions -std=c++11 -O0 -fno-limit-debug-info -fPIC"
   },
   "buildFiles": [
-    "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\CMakeLists.txt",
+    "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\CMakeLists.txt",
     "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\android.toolchain.cmake",
     "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\Sdk\\ndk\\21.1.6352462\\build\\cmake\\platforms.cmake"
   ],
   "cleanCommands": [
-    "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" clean"
+    "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" clean"
   ],
-  "buildTargetsCommand": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "buildTargetsCommand": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
     "native_opencv-Debug-armeabi-v7a": {
-      "buildCommand": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" native_opencv",
+      "buildCommand": "C:\\Users\\JangSeongHo\\AppData\\Local\\Android\\sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\.cxx\\cmake\\debug\\armeabi-v7a\" native_opencv",
       "buildType": "debug",
       "toolchain": "217123887",
       "abi": "armeabi-v7a",
       "artifactName": "native_opencv",
       "files": [
         {
-          "src": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\ios\\Classes\\native_opencv.cpp",
+          "src": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\ios\\Classes\\native_opencv.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\build\\app\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libnative_opencv.so",
+      "output": "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\build\\app\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libnative_opencv.so",
       "runtimeFiles": [
-        "C:\\Users\\JangSeongHo\\StudioProjects\\practice1\\android\\app\\src\\main\\jniLibs\\libs\\armeabi-v7a\\libopencv_java4.so"
+        "C:\\Users\\JangSeongHo\\StudioProjects\\Face_overlay_filter\\android\\app\\src\\main\\jniLibs\\libs\\armeabi-v7a\\libopencv_java4.so"
       ]
     }
   },
