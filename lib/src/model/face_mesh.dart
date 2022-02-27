@@ -95,9 +95,9 @@ class FaceMesh extends AiModel {
 
     interpreter!.runForMultipleInputs(inputs, outputs);
     print(outputScores.getDoubleValue(0));
-    // if (outputScores.getDoubleValue(0) < 0) {
-    //   return null;
-    // }
+    if (outputScores.getDoubleValue(0) < 0) {
+      return null;
+    }
 
     final landmarkPoints = outputLandmarks.getDoubleList().reshape([468, 3]);
 
@@ -117,8 +117,11 @@ class FaceMesh extends AiModel {
 
 // compute, isolate와 같은 백그라운드 실행을 위해서 전역 메소드로 선언합니다.
 // 아직 공부 중이기에 추후 수정될 수 있습니다.
-FutureOr<Map<String, dynamic>?> runFaceMesh(Map<String, dynamic> params) {
-  final result = params['model'].predict(params['image']!);
+Map<String, dynamic>? runFaceMesh(Map<String, dynamic> params) {
+  final faceMesh =
+  FaceMesh(interpreter: Interpreter.fromAddress(params['detectorAddress']));
+  final image = ImageUtils.convertCameraImage(params['cameraImage']);
+  final result = faceMesh.predict(image!);
 
   return result;
 }
